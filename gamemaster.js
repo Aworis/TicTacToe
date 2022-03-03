@@ -22,18 +22,23 @@ function getValues() {
         alert('Gebe einen Namen ein und wähle dein Symbol aus!');
         return false;
     }
-    
-    // Set Symbols.
+    // Set symbols.
     else if (checkedRadio.value == 'x') {
         firstPlayerSymbol = checkedRadio.value = 'cross';
         secondPlayerSymbol = checkedRadio.value = 'circle';
         gameGridMarkFirstPlayer = 'x';
         gameGridMarkSecondPlayer = 'o';
-    } else {
+    }
+    else if (checkedRadio.value == 'o') {
         firstPlayerSymbol = checkedRadio.value = 'circle';
         secondPlayerSymbol = checkedRadio.value = 'cross';
         gameGridMarkFirstPlayer = 'o';
         gameGridMarkSecondPlayer = 'x';
+    }
+    // Validate form of second player.
+    else if (checkedRadio != null && firstPlayerName != '' && secondPlayerName == '') {
+        alert('Gebe einen Namen ein!');
+        return false;
     }
 
     // Change scoreboard text.
