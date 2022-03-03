@@ -58,11 +58,11 @@ function determineWinner(gameGrid, index) {
         if (firstCounter > secondCounter) {
             scoreboardFirstPlayer.style.backgroundColor = scoreboardWinningColor;
             scoreboardSecondPlayer.style.backgroundColor = 'unset';
-            gameMasterText.innerHTML = firstPlayerName + ' hat gewonnen!';
+            gameMasterText.innerText = firstPlayerName + ' hat gewonnen!';
         } else if (firstCounter == secondCounter) {
             scoreboardFirstPlayer.style.backgroundColor = 'unset';
             scoreboardSecondPlayer.style.backgroundColor = scoreboardWinningColor;
-            gameMasterText.innerHTML = secondPlayerName + ' hat gewonnen!';
+            gameMasterText.innerText = secondPlayerName + ' hat gewonnen!';
         }
     }
 
@@ -125,7 +125,7 @@ function determineWinner(gameGrid, index) {
             noMoreMoves();
             document.querySelectorAll('#scoreboard-table th')[0].style.backgroundColor = "unset";
             document.querySelectorAll('#scoreboard-table th')[1].style.backgroundColor = "unset";
-            document.getElementById('game-master-text').innerHTML = 'Das Spiel endet unentschieden!';
+            document.getElementById('game-master-text').innerText = 'Das Spiel endet unentschieden!';
         break;
     }   
 }

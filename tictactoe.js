@@ -6,7 +6,7 @@ and it is determined which player has to move which symbol.
 function startGame() {
     // Prepare scoreboard.
     let gameMasterText = document.getElementById('game-master-text');
-    gameMasterText.innerHTML = firstPlayerName + ' ist am Zug.';
+    gameMasterText.innerText = firstPlayerName + ' ist am Zug.';
     document.getElementById('second-player-form').style.display = 'none';
 
     document.getElementById('start-button').style.display = 'initial';
@@ -17,8 +17,8 @@ function startGame() {
     let scoreboardFirstPlayer = document.querySelectorAll('#scoreboard-table th')[0];
     let scoreboardSecondPlayer = document.querySelectorAll('#scoreboard-table th')[1];
     let scoreboardHighlightColor = '#0d3614';
-    scoreboardFirstPlayer.innerHTML = firstPlayerName + ' ' + gameGridMarkFirstPlayer;
-    scoreboardSecondPlayer.innerHTML = secondPlayerName + ' ' + gameGridMarkSecondPlayer;
+    scoreboardFirstPlayer.innerText = firstPlayerName + ' ' + gameGridMarkFirstPlayer;
+    scoreboardSecondPlayer.innerText = secondPlayerName + ' ' + gameGridMarkSecondPlayer;
     scoreboardFirstPlayer.style.backgroundColor = scoreboardHighlightColor;
     scoreboardSecondPlayer.style.backgroundColor = 'unset';
 
@@ -53,16 +53,16 @@ function startGame() {
                 // Check which player's turn it is and highlight their name on the scoreboard.
                 if ( numberOfFirstPlayerSymbol == null) {
                     scoreboardFirstPlayer.style.backgroundColor = scoreboardHighlightColor;
-                    gameMasterText.innerHTML = firstPlayerName + ' ist am Zug.';
+                    gameMasterText.innerText = firstPlayerName + ' ist am Zug.';
                 }
                 else if ((numberOfFirstPlayerSymbol + numberOfSecondPlayerSymbol) % 2 == 0) {
                     scoreboardSecondPlayer.style.backgroundColor = scoreboardHighlightColor;
                     scoreboardFirstPlayer.style.backgroundColor = 'unset';
-                    gameMasterText.innerHTML = secondPlayerName + ' ist am Zug.';
+                    gameMasterText.innerText = secondPlayerName + ' ist am Zug.';
                 } else {
                     scoreboardFirstPlayer.style.backgroundColor = scoreboardHighlightColor;
                     scoreboardSecondPlayer.style.backgroundColor = 'unset';
-                    gameMasterText.innerHTML = firstPlayerName + ' ist am Zug.';
+                    gameMasterText.innerText = firstPlayerName + ' ist am Zug.';
                 }
                 
                 // Check which symbol should be set first.
