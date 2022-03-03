@@ -5,7 +5,8 @@ let firstPlayerSymbol;
 let secondPlayerSymbol;
 let gameGridMarkFirstPlayer;
 let gameGridMarkSecondPlayer;
-
+let scoreFirstPlayer = 0;
+let scoreSecondPlayer = 0;
 
 /*
 Before the game starts,

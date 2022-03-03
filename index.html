@@ -22,12 +22,16 @@
               <th>Player 1</th>
               <th>Player 2</th>
             </tr>
+            <tr>
+              <td>0</td>
+              <td>0</td>
+            </tr>
           </table>
 
           <!-- Player one -->
           <div id="first-player-form">
             <label for="first-player">Name des ersten Spielers:</label><br>
-            <input type="text" id="first-player" name="first-player"><br>
+            <input type="text" id="first-player" name="first-player" maxlength="9"><br>
             <p>Symbol:</p>
             <input type="radio" id="x-symbol" name="choose-symbol" value="x">
             <label for="x-symbol">X</label><br>
@@ -39,7 +43,7 @@
           <!-- Player two -->
           <div id="second-player-form" style="display: none;">
             <label for="second-player">Name des zweiten Spielers:</label><br>
-            <input type="text" id="second-player" name="second-player"><br>
+            <input type="text" id="second-player" name="second-player" maxlength="9"><br>
             <button id="button-two" onclick="getValues()">Auswählen</button> 
           </div>
 
