@@ -37,14 +37,23 @@ function determineWinner(gameGrid, index) {
         }
     }
     
-    // Determine winner and adjust scoreboard and game master text.
+    // Function to determine winner and adjust scoreboard and game master text.
     function indicateWinner() {
         let firstCounter = 0;
         let secondCounter = 0;
         let scoreboardFirstPlayer = document.querySelectorAll('#scoreboard-table th')[0];
         let scoreboardSecondPlayer = document.querySelectorAll('#scoreboard-table th')[1];
+        
+        let tableDataFirstPlayer = document.querySelectorAll('#scoreboard-table td')[0];
+        let tableDataSecondPlayer = document.querySelectorAll('#scoreboard-table td')[1];
+
+        
         let gameMasterText = document.getElementById('game-master-text');
         let scoreboardWinningColor = 'red';
+
+
+        // Adjust scoreboard and game master text.
+        
 
         for (let i = 0; i < gameGrid.length; i++) {
             if (gameGrid[i].includes(gameGridMarkFirstPlayer) == true) {
@@ -59,10 +68,14 @@ function determineWinner(gameGrid, index) {
             scoreboardFirstPlayer.style.backgroundColor = scoreboardWinningColor;
             scoreboardSecondPlayer.style.backgroundColor = 'unset';
             gameMasterText.innerText = firstPlayerName + ' hat gewonnen!';
+            scoreFirstPlayer += 1;
+            tableDataFirstPlayer.innerText = scoreFirstPlayer;
         } else if (firstCounter == secondCounter) {
             scoreboardFirstPlayer.style.backgroundColor = 'unset';
             scoreboardSecondPlayer.style.backgroundColor = scoreboardWinningColor;
             gameMasterText.innerText = secondPlayerName + ' hat gewonnen!';
+            scoreSecondPlayer += 1;
+            tableDataSecondPlayer.innerText = scoreSecondPlayer;
         }
     }
 

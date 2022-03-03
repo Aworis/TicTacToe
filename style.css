@@ -53,14 +53,16 @@
 label,
 h1,
 p,
-th {
+th,
+td {
     color: white;
     font-family: system-ui,-apple-system,system-ui,"Helvetica Neue",Helvetica,Arial,sans-serif;
 }
 
 label,
 p,
-th {
+th,
+td {
     font-size: 13px;
 }
 
@@ -87,12 +89,18 @@ h1 {
 }
 
 /* Table */
+
+table {
+    border-spacing: 0;
+}
+
 tr {
     display: block;
 }
 
-th {
-    width: 300px;
+th,
+td {
+    width: 220px;
     font-size: 30px;
 }
 
@@ -103,7 +111,7 @@ th {
 }
 
 #start-button {
-    bottom: -170px;
+    bottom: -130px;
 }
 
 button {
