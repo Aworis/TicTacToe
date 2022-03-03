@@ -1,69 +1,69 @@
 <!doctype html>
 <html lang="de">
   <head>
-      <!-- Required meta tags -->
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      <link rel="stylesheet" href="style.css">
-      <title>Tic-Tac-Toe</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+    <title>Tic-Tac-Toe</title>
   </head>
   <body>
 
-        <div id="scoreboard">
-          <h1>Tic-Tac-Toe</h1>
-          <p id="game-master-text">
-          Willkommen! Erster Spieler, gebe deinen Namen ein und wähle das Symbol,
-          mit dem du spielen wirst und bestätige deine Auswahl. Zweiter Spieler, anschließend gebe deinen Namen ein und bestätigt die Eingabe, 
-          um das Spiel zu starten.
-          </p>
+    <div id="scoreboard">
+      <h1>Tic-Tac-Toe</h1>
+      <p id="game-master-text">
+        Willkommen! Erster Spieler, gebe deinen Namen ein und wähle das Symbol,
+        mit dem du spielen wirst und bestätige deine Auswahl. Zweiter Spieler, anschließend gebe deinen Namen ein und bestätigt die Eingabe, 
+        um das Spiel zu starten.
+      </p>
 
-          <table id="scoreboard-table" style="display: none;">
-            <tr>
-              <th>Player 1</th>
-              <th>Player 2</th>
-            </tr>
-            <tr>
-              <td>0</td>
-              <td>0</td>
-            </tr>
-          </table>
+      <table id="scoreboard-table" style="display: none;">
+        <tr>
+          <th>Player 1</th>
+          <th>Player 2</th>
+        </tr>
+        <tr>
+          <td>0</td>
+          <td>0</td>
+        </tr>
+      </table>
 
-          <!-- Player one -->
-          <div id="first-player-form">
-            <label for="first-player">Name des ersten Spielers:</label><br>
-            <input type="text" id="first-player" name="first-player" maxlength="9"><br>
-            <p>Symbol:</p>
-            <input type="radio" id="x-symbol" name="choose-symbol" value="x">
-            <label for="x-symbol">X</label><br>
-            <input type="radio" id="o-symbol" name="choose-symbol" value="o">
-            <label for="o-symbol">O</label><br>
-            <button id="button-one" onclick="getValues()">Auswählen</button> 
-          </div>
+      <!-- Player one -->
+      <div id="first-player-form">
+        <label for="first-player">Name des ersten Spielers:</label><br>
+        <input type="text" id="first-player" name="first-player" maxlength="9"><br>
+        <p>Symbol:</p>
+        <input type="radio" id="x-symbol" name="choose-symbol" value="x">
+        <label for="x-symbol">X</label><br>
+        <input type="radio" id="o-symbol" name="choose-symbol" value="o">
+        <label for="o-symbol">O</label><br>
+        <button id="button-one" onclick="getValues()">Auswählen</button> 
+      </div>
 
-          <!-- Player two -->
-          <div id="second-player-form" style="display: none;">
-            <label for="second-player">Name des zweiten Spielers:</label><br>
-            <input type="text" id="second-player" name="second-player" maxlength="9"><br>
-            <button id="button-two" onclick="getValues()">Auswählen</button> 
-          </div>
+      <!-- Player two -->
+      <div id="second-player-form" style="display: none;">
+        <label for="second-player">Name des zweiten Spielers:</label><br>
+        <input type="text" id="second-player" name="second-player" maxlength="9"><br>
+        <button id="button-two" onclick="getValues()">Auswählen</button> 
+      </div>
 
-          <button id="start-button" onclick="startGame()" style="display: none;">Neue Runde</button>
-        </div>
+      <button id="start-button" onclick="startGame()" style="display: none;">Neue Runde</button>
+    </div>
 
-        <div id="tictactoe-grid" >
-            <div class="tictactoe-field"></div>
-            <div class="tictactoe-field"></div>
-            <div class="tictactoe-field"></div>
-            <div class="tictactoe-field"></div>
-            <div class="tictactoe-field"></div>
-            <div class="tictactoe-field"></div>
-            <div class="tictactoe-field"></div>
-            <div class="tictactoe-field"></div>
-            <div class="tictactoe-field"></div>
-        </div>
-    
-        <script src="gamemaster.js"></script>
-        <script src="tictactoe.js"></script>
-        <script src="determinewinner.js"></script>
+    <div id="tictactoe-grid" >
+      <div class="tictactoe-field"></div>
+      <div class="tictactoe-field"></div>
+      <div class="tictactoe-field"></div>
+      <div class="tictactoe-field"></div>
+      <div class="tictactoe-field"></div>
+      <div class="tictactoe-field"></div>
+      <div class="tictactoe-field"></div>
+      <div class="tictactoe-field"></div>
+      <div class="tictactoe-field"></div>
+    </div>
+
+    <script src="gamemaster.js"></script>
+    <script src="tictactoe.js"></script>
+    <script src="determinewinner.js"></script>
   </body>
 </html>
