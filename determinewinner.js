@@ -1,3 +1,8 @@
+// Global variables
+let scoreFirstPlayer = 0;
+let scoreSecondPlayer = 0;
+let numberOfRounds = 0;
+
 /*
 The winner will be determined.
 The player who was able to place his symbol in a row, column or diagonal first wins.
@@ -5,18 +10,19 @@ The player who was able to place his symbol in a row, column or diagonal first w
 function determineWinner(gameGrid, index) {
     // Possible winning situations.
     let value = gameGrid[index];
-
+    // Rows
     let rowOneIsTrue = gameGrid[0] === value && gameGrid[1] === value && gameGrid[2] === value;
     let rowTwoIsTrue = gameGrid[3] === value && gameGrid[4] === value && gameGrid[5] === value;
     let rowThreeIsTrue = gameGrid[6] === value && gameGrid[7] === value && gameGrid[8] === value;
-
+    // Columns
     let columnOneIsTrue = gameGrid[0] === value && gameGrid[3] === value && gameGrid[6] === value;
     let columnTwoIsTrue = gameGrid[1] === value && gameGrid[4] === value && gameGrid[7] === value;
     let columnThreeIsTrue = gameGrid[2] === value && gameGrid[5] === value && gameGrid[8] === value;
-
+    // Diagonals
     let diagonalOneIsTrue = gameGrid[0] === value && gameGrid[4] === value && gameGrid[8] === value;
     let diagonalTwoIsTrue = gameGrid[2] === value && gameGrid[4] === value && gameGrid[6] === value;
     
+    // Function to determine the winning fields and then color them.
     function changeFieldColor(startIndex, endIndex) {
         let field = document.getElementsByClassName('tictactoe-field');
         let highlightingColor = '#148226';
@@ -28,7 +34,7 @@ function determineWinner(gameGrid, index) {
         if ( diagonalTwoIsTrue || diagonalOneIsTrue) {
             field[4].style.backgroundColor = highlightingColor;
         }
-        // Then check rows and columns. Calculation with the Least Common Multiple. 1 is added to the indexes because 0 has no LCM.
+        // Then check rows and columns. 1 is added to the indexes because 0 has no Least Common Multiple.
         else if ( 28 % (startIndex + 1) == 0 && 18 % (endIndex + 1) == 0 ) {
             field[startIndex + 1].style.backgroundColor = highlightingColor;
         }
@@ -39,10 +45,10 @@ function determineWinner(gameGrid, index) {
     
     // Function to determine winner and adjust scoreboard and game master text.
     function indicateWinner() {
-        let firstCounter = 0;
-        let secondCounter = 0;
-        let scoreboardFirstPlayer = document.querySelectorAll('#scoreboard-table th')[0];
-        let scoreboardSecondPlayer = document.querySelectorAll('#scoreboard-table th')[1];
+        let firstMarkerCounter = 0;
+        let secondMarkerCounter = 0;
+        let scoreboardFirstPlayer = document.querySelectorAll('#scoreboard-table th')[1];
+        let scoreboardSecondPlayer = document.querySelectorAll('#scoreboard-table th')[2];
         
         let tableDataFirstPlayer = document.querySelectorAll('#scoreboard-table td')[0];
         let tableDataSecondPlayer = document.querySelectorAll('#scoreboard-table td')[1];
@@ -51,32 +57,45 @@ function determineWinner(gameGrid, index) {
         let gameMasterText = document.getElementById('game-master-text');
         let scoreboardWinningColor = 'red';
 
-
-        // Adjust scoreboard and game master text.
-        
-
+        // Count marker in game grid array.
         for (let i = 0; i < gameGrid.length; i++) {
-            if (gameGrid[i].includes(gameGridMarkFirstPlayer) == true) {
-                firstCounter++;
+            if (gameGrid[i].includes(gameGridMarkerFirstPlayer) == true) {
+                firstMarkerCounter++;
             }
-            else if (gameGrid[i].includes(gameGridMarkSecondPlayer) == true) {
-                secondCounter++;
+            else if (gameGrid[i].includes(gameGridMarkerSecondPlayer) == true) {
+                secondMarkerCounter++;
             }
         }
 
-        if (firstCounter > secondCounter) {
+        // Functions to adjust game master text and scoreboard.
+        function firstPlayerWins() {
             scoreboardFirstPlayer.style.backgroundColor = scoreboardWinningColor;
             scoreboardSecondPlayer.style.backgroundColor = 'unset';
             gameMasterText.innerText = firstPlayerName + ' hat gewonnen!';
             scoreFirstPlayer += 1;
             tableDataFirstPlayer.innerText = scoreFirstPlayer;
-        } else if (firstCounter == secondCounter) {
+            document.getElementById('start-button').style.display = 'initial';
+        }
+
+        function secondPlayerWins() {
             scoreboardFirstPlayer.style.backgroundColor = 'unset';
             scoreboardSecondPlayer.style.backgroundColor = scoreboardWinningColor;
             gameMasterText.innerText = secondPlayerName + ' hat gewonnen!';
             scoreSecondPlayer += 1;
             tableDataSecondPlayer.innerText = scoreSecondPlayer;
+            document.getElementById('start-button').style.display = 'initial';
         }
+
+        // Determine winner. Adjust game master text and scoreboard.
+        if (numberOfRounds % 2 == 1 && firstMarkerCounter > secondMarkerCounter ||
+            numberOfRounds % 2 == 0 && firstMarkerCounter == secondMarkerCounter) {
+            firstPlayerWins();
+        }
+        else if (numberOfRounds % 2 == 1 && firstMarkerCounter == secondMarkerCounter ||
+                 numberOfRounds % 2 == 0 && firstMarkerCounter < secondMarkerCounter) {
+            secondPlayerWins();
+        }
+        
     }
 
     // Block board after the game ends.
@@ -84,7 +103,7 @@ function determineWinner(gameGrid, index) {
         document.getElementById('tictactoe-grid').style.pointerEvents = 'none';
     }
     
-    // Determine winner.
+    // Determine winner and adjust game.
     switch (true) {
 
         // Check diagonals.
@@ -136,9 +155,9 @@ function determineWinner(gameGrid, index) {
         // Drawn match.
         case !gameGrid.includes('-'):
             noMoreMoves();
-            document.querySelectorAll('#scoreboard-table th')[0].style.backgroundColor = "unset";
-            document.querySelectorAll('#scoreboard-table th')[1].style.backgroundColor = "unset";
-            document.getElementById('game-master-text').innerText = 'Das Spiel endet unentschieden!';
+            scoreboardFirstPlayer.style.backgroundColor = "unset";
+            scoreboardSecondPlayer.style.backgroundColor = "unset";
+            gameMasterText.innerText = 'Das Spiel endet unentschieden!';
         break;
     }   
 }

@@ -1,5 +1,7 @@
 # Tic Tac Toe
 
+![Alt text](example.jpg)
+
 Aufgabe war es, ein Spiel zu entwickeln, dass folgende Anforderungen erfüllt:
 
 -   Erstelle ein Spielfeld mit 3x3 Feldern.
@@ -22,14 +24,17 @@ Um das Spiel starten zu können, muss lediglich die Datei `index.html` mit einem
 
 Zug Beginn trägt der erste Spieler seinen Namen in das Eigabefeld ein, wählt sein Symbol aus (X oder O) und bestätigt anschließend mit einem Klick auf "Auswählen". Danach gibt der zweite Spieler seinen Namen ein und bestätigt ebenfalls mit einem Klick auf "Auswählen".
 
-Das Spiel beginnt und beide Spieler können abwechselnd ihre Symbole in die Felder setzen, beginnend mit dem ersten Spieler. Sobald ein Gewinner ermittelt wurde, werden die entsprechenden Felder farblich hervorgehoben und der Name des Gewinners wird angezeigt.
+Das Spiel beginnt und beide Spieler können abwechselnd ihre Symbole in die Felder setzen, beginnend mit dem ersten Spieler. Sobald ein Gewinner ermittelt wurde, werden die entsprechenden Spielfelder farblich hervorgehoben, der Name des Gewinners wird im Textfeld angezeigt und der Punktestand wird aktualisiert.
 
 Andernfalls endet das Spiel unentschieden, sobald alle Felder belegt sind. Ein entsprechender Text weist darauf hin.
 
 ## Neue Spielrunde starten
 
-Es kann zu jeder Zeit nach Spielbeginn eine neue Runde gestartet werden. Hierzu muss auf die Schaltfläche "Neue Runde" geklickt werden. Der erste Spieler beginnt erneut die Spielrunde.
+Sobald eine Spielrunde mit einem Gewinner oder mit Unentschieden endet, 
+kann eine neue Runde gestartet werden. Hierzu erscheint eine Schaltfläche mit dem Text "Neue Runde".
+
+ Der Punktestand bleibt mit jeder weiteren Runde erhalten und die Anzahl der gespielten Runden wird angezeigt. Mit jeder neuen Runde wechselt der Spieler, der das erste Symbol setzen darf.
 
 ## Neues Spiel starten
 
-Um ein neues Spiel zu starten, muss das Fenster des Webbrowser neu geladen werden. Anschließend können beide Spieler neue Namen vergeben und das Speil startet von vorn.
+Um ein komplett neues Spiel zu starten, muss das Fenster des Webbrowser neu geladen werden. Anschließend können beide Spieler neue Namen vergeben und das Speil startet von vorn.

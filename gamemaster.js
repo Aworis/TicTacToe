@@ -3,10 +3,8 @@ let firstPlayerName;
 let secondPlayerName;
 let firstPlayerSymbol;
 let secondPlayerSymbol;
-let gameGridMarkFirstPlayer;
-let gameGridMarkSecondPlayer;
-let scoreFirstPlayer = 0;
-let scoreSecondPlayer = 0;
+let gameGridMarkerFirstPlayer;
+let gameGridMarkerSecondPlayer;
 
 /*
 Before the game starts,
@@ -27,14 +25,14 @@ function getValues() {
     else if (checkedRadio.value == 'x') {
         firstPlayerSymbol = checkedRadio.value = 'cross';
         secondPlayerSymbol = checkedRadio.value = 'circle';
-        gameGridMarkFirstPlayer = 'x';
-        gameGridMarkSecondPlayer = 'o';
+        gameGridMarkerFirstPlayer = 'x';
+        gameGridMarkerSecondPlayer = 'o';
     }
     else if (checkedRadio.value == 'o') {
         firstPlayerSymbol = checkedRadio.value = 'circle';
         secondPlayerSymbol = checkedRadio.value = 'cross';
-        gameGridMarkFirstPlayer = 'o';
-        gameGridMarkSecondPlayer = 'x';
+        gameGridMarkerFirstPlayer = 'o';
+        gameGridMarkerSecondPlayer = 'x';
     }
     // Validate form of second player.
     else if (checkedRadio != null && firstPlayerName != '' && secondPlayerName == '') {
@@ -43,11 +41,9 @@ function getValues() {
     }
 
     // Change scoreboard text.
-    function changeGamemasterText (divIdOne, divIdTwo) {
-        document.getElementById(divIdOne).style.display = 'none';
-        document.getElementById(divIdTwo).style.display = 'block';
-    }
-    changeGamemasterText ('first-player-form', 'second-player-form');
+    document.getElementById('first-player-form').style.display = 'none';
+    document.getElementById('second-player-form').style.display = 'block';
+    
     
     // Start game.
     if (secondPlayerName != '') {
