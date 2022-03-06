@@ -31,7 +31,7 @@ function getValues() {
     else if (checkedRadio.value == 'o') {
         firstPlayerSymbol = checkedRadio.value = 'circle';
         secondPlayerSymbol = checkedRadio.value = 'cross';
-        gameGridMarkerFirstPlayer = 'o';
+        gameGridMarkerFirstPlayer = 'O';
         gameGridMarkerSecondPlayer = 'X';
     }
     // Validate form of second player.
