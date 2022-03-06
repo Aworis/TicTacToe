@@ -44,17 +44,15 @@ function determineWinner(gameGrid, index) {
     }
     
     // Function to determine winner and adjust scoreboard and game master text.
+    let scoreboardFirstPlayer = document.querySelectorAll('#scoreboard-table th')[1];
+    let scoreboardSecondPlayer = document.querySelectorAll('#scoreboard-table th')[2];
+    let gameMasterText = document.getElementById('game-master-text');
+
     function indicateWinner() {
         let firstMarkerCounter = 0;
         let secondMarkerCounter = 0;
-        let scoreboardFirstPlayer = document.querySelectorAll('#scoreboard-table th')[1];
-        let scoreboardSecondPlayer = document.querySelectorAll('#scoreboard-table th')[2];
-        
         let tableDataFirstPlayer = document.querySelectorAll('#scoreboard-table td')[0];
         let tableDataSecondPlayer = document.querySelectorAll('#scoreboard-table td')[1];
-
-        
-        let gameMasterText = document.getElementById('game-master-text');
         let scoreboardWinningColor = 'red';
 
         // Count marker in game grid array.
