@@ -25,14 +25,14 @@ function getValues() {
     else if (checkedRadio.value == 'x') {
         firstPlayerSymbol = checkedRadio.value = 'cross';
         secondPlayerSymbol = checkedRadio.value = 'circle';
-        gameGridMarkerFirstPlayer = 'x';
-        gameGridMarkerSecondPlayer = 'o';
+        gameGridMarkerFirstPlayer = 'X';
+        gameGridMarkerSecondPlayer = 'O';
     }
     else if (checkedRadio.value == 'o') {
         firstPlayerSymbol = checkedRadio.value = 'circle';
         secondPlayerSymbol = checkedRadio.value = 'cross';
         gameGridMarkerFirstPlayer = 'o';
-        gameGridMarkerSecondPlayer = 'x';
+        gameGridMarkerSecondPlayer = 'X';
     }
     // Validate form of second player.
     else if (checkedRadio != null && firstPlayerName != '' && secondPlayerName == '') {
