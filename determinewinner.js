@@ -156,6 +156,7 @@ function determineWinner(gameGrid, index) {
             scoreboardFirstPlayer.style.backgroundColor = "unset";
             scoreboardSecondPlayer.style.backgroundColor = "unset";
             gameMasterText.innerText = 'Das Spiel endet unentschieden!';
+            document.getElementById('start-button').style.display = 'initial';
         break;
     }   
 }
