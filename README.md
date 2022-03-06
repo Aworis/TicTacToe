@@ -22,6 +22,8 @@ Um das Spiel starten zu können, muss lediglich die Datei `index.html` mit einem
 
 ## Spielablauf
 
+Das Spiel ist so ausgelegt, dass zwei Spieler auf dem selben Endgerät gegeneinander spielen.
+
 Zug Beginn trägt der erste Spieler seinen Namen in das Eigabefeld ein, wählt sein Symbol aus (X oder O) und bestätigt anschließend mit einem Klick auf "Auswählen". Danach gibt der zweite Spieler seinen Namen ein und bestätigt ebenfalls mit einem Klick auf "Auswählen".
 
 Das Spiel beginnt und beide Spieler können abwechselnd ihre Symbole in die Felder setzen, beginnend mit dem ersten Spieler. Sobald ein Gewinner ermittelt wurde, werden die entsprechenden Spielfelder farblich hervorgehoben, der Name des Gewinners wird im Textfeld angezeigt und der Punktestand wird aktualisiert.
